@@ -1,3 +1,7 @@
+/* ===============================
+   jQuery: Inicjalizacja DataTables
+   - tworzenie tabeli z paginacją, sortowaniem i wyszukiwaniem
+=============================== */
 $(document).ready(function() {
 
     var table = $('#recipesTable').DataTable({
@@ -21,6 +25,10 @@ $(document).ready(function() {
         }
     });
 
+    /* ===============================
+       jQuery: Funkcja dodawania przepisu
+       - dodaje wiersz do tabeli i animuje go
+    =============================== */
     function addRecipe(title, ingredients, time) {
         var rowNode = table.row.add([
             title,
@@ -32,7 +40,10 @@ $(document).ready(function() {
         $(rowNode).hide().fadeIn(500);
     }
 
-    // Ręczne dodawanie
+     /* ===============================
+       jQuery: Obsługa submit formularza
+       - dodawanie przepisu ręcznie
+    =============================== */
     $("#recipeForm").submit(function(e) {
         e.preventDefault();
 
@@ -57,7 +68,9 @@ $(document).ready(function() {
         $("#recipeForm")[0].reset();
     });
 
-    // 🎲 LOSOWANIE PRZEPISU
+       /* ===============================
+       jQuery: Obsługa przycisku losuj przepis
+    =============================== */
     $("#randomRecipe").click(function() {
 
         const names = [
@@ -89,7 +102,10 @@ $(document).ready(function() {
         addRecipe(randomName, randomIngredients, randomTime);
     });
 
-    // Usuwanie
+    /* ===============================
+       jQuery: Usuwanie przepisu
+       - kliknięcie przycisku Usuń
+    =============================== */
     $("#recipesTable tbody").on("click", ".deleteBtn", function() {
         var row = $(this).closest("tr");
         row.fadeOut(400, function() {
@@ -97,9 +113,13 @@ $(document).ready(function() {
         });
     });
 
-    // Tryb ciemny
+      /* ===============================
+       jQuery: Tryb ciemny / jasny
+       - przełączanie klas body
+    =============================== */
     $("#toggleTheme").click(function() {
         $("body").toggleClass("dark-mode light-mode");
     });
+
 
 });
