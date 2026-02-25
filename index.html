@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <title>Generator Przepisów</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Bootstrap -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- DataTables -->
+    <link rel="stylesheet" href="https://cdn.datatables.net/1.13.6/css/jquery.dataTables.min.css">
+
+    <!-- Lokalny CSS (w tym samym folderze) -->
+    <link rel="stylesheet" href="style.css">
+</head>
+<body class="light-mode">
+
+<div class="container my-5">
+
+    <div class="banner text-center mb-4">
+        <h1>Generator Przepisów</h1>
+        <button id="toggleTheme" class="btn btn-light mt-2">Tryb Ciemny/Jasny</button>
+    </div>
+
+    <div class="card p-4 mb-4">
+        <form id="recipeForm">
+            <div class="row g-3">
+                <div class="col-md-4">
+                    <input type="text" id="title" class="form-control" placeholder="Nazwa przepisu">
+                </div>
+                <div class="col-md-4">
+                    <input type="text" id="ingredients" class="form-control" placeholder="Składniki">
+                </div>
+                <div class="col-md-4">
+                    <input type="text" id="time" class="form-control" placeholder="Czas (min)">
+                </div>
+            </div>
+            <div class="mt-3">
+                <button type="submit" class="btn btn-purple">Dodaj</button>
+                <button type="button" id="randomRecipe" class="btn btn-warning ms-2">Losuj przepis</button>
+            </div>
+        </form>
+        <div id="errorMsg" class="text-danger mt-2"></div>
+    </div>
+
+    <div class="card p-3">
+        <table id="recipesTable" class="display table">
+            <thead>
+                <tr>
+                    <th>Nazwa</th>
+                    <th>Składniki</th>
+                    <th>Czas</th>
+                    <th>Akcja</th>
+                </tr>
+            </thead>
+            <tbody></tbody>
+        </table>
+    </div>
+
+</div>
+
+<!-- JS -->
+<script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+<script src="https://cdn.datatables.net/1.13.6/js/jquery.dataTables.min.js"></script>
+
+<!-- Lokalny JS -->
+<script src="script.js"></script>
+
+</body>
+</html>
