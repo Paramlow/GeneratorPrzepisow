@@ -1,5 +1,5 @@
 # Generator Przepisów
-Interaktywny generator przepisów online – pozwala dodawać własne przepisy, losować nowe oraz zarządzać nimi w prosty sposób.
+Interaktywny generator przepisów online - pozwala dodawać własne przepisy, losować nowe oraz zarządzać nimi w prosty sposób.
 
 
 ## Funkcje
